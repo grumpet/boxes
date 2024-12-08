@@ -38,4 +38,9 @@ docker exec -it http_container tshark -r /root/capture.pcap
 docker cp http_container:/root/capture.pcap ./capture.pcap
 
 # convert pcap to csv using tshark
-tshark -r capture.pcap -T fields -E separator=, -E quote=d -E header=y -e frame.number -e frame.time -e ip.src -e ip.dst -e tcp.srcport -e tcp.dstport -e frame.len -e _ws.col.Info > capture.csv
+./pcap_to_csv.sh capture.pcap capture.csv
+
+# analyze the pcap file using tshark
+tshark -r capture.pcap -Y "ip.addr == 172.18.0.2"
+
+# analyze the csv file using spreadsheet software or data analysis tools
