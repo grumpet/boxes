@@ -35,7 +35,7 @@ docker exec -it http_container tcpdump -r /root/capture.pcap
 docker exec -it http_container tshark -r /root/capture.pcap
 
 # copy the pcap file to your host machine
-docker cp http_container:/root/capture.pcap ./capture.pcap
+docker cp http_container:/root/capture.pcap pcap/capture.pcap
 
 # convert pcap to csv using tshark
 ./pcap_to_csv.sh capture.pcap capture.csv
