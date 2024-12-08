@@ -1,0 +1,11 @@
+# Use an official Ubuntu as a parent image
+FROM ubuntu:latest
+
+# Install nmap, tcpdump, net-tools, and ping
+RUN apt-get update && apt-get install -y nmap tcpdump net-tools iputils-ping
+
+# Set the working directory
+WORKDIR /root
+
+# Run a shell to keep the container running
+CMD ["bash"]
