@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 # Install Apache HTTP server
-RUN apt-get update && apt-get install -y apache2 tcpdump tshark
+RUN apt-get update && apt-get install -y apache2 tcpdump tshark net-tools
 
 # Expose port 80
 EXPOSE 80
