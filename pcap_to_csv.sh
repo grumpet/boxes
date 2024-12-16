@@ -7,6 +7,8 @@ csv_dir="csv"
 # Ensure the csv directory exists
 mkdir -p "$csv_dir"
 
+echo "Converting pcap files to csv..."
+
 # Loop through all pcap files in the pcap directory
 for pcap_file in "$pcap_dir"/*.pcap; do
     # Get the base name of the pcap file (without directory and extension)

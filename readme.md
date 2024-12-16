@@ -11,9 +11,9 @@ docker network create my_custom_network
 docker run --rm --name nmap_container --network my_custom_network -it nmap-container
 
 # runs the http server container on the custom network with additional capabilities
-docker run --rm --name http_container --network my_custom_network -p 80:80 --cap-add=CAP_NET_ADMIN --cap-add=CAP_NET_RAW -d http-container
+docker run --rm --name http_container --network my_custom_network -p 80:80 --cap-add=CAP_NET_ADMIN --cap-add=CAP_NET_RAW -d http-container 
 
-# acces http container terminal
+# access http container terminal
 docker exec -it http_container /bin/bash
 
 # find the IP address of the http container
